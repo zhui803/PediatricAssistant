@@ -5,7 +5,7 @@ import json
 
 load_dotenv()
 client = OpenAI()
-with open("PediatricSavior/backend/AssistantAPICall/instruction_text.txt", "r") as file:
+with open("backend/AssistantAPICall/instruction_text.txt", "r") as file:
     instruction = file.read()
 
 assistant = client.beta.assistants.create(
@@ -78,3 +78,9 @@ def loadFile(json_file_address):
         # Parse the JSON file and convert it into a Python dictionary
         data = json.load(file)
     return data
+
+def conversation():
+    simulationFile = loadFile("PediatricSavior/backend/AssistantAPICall/case_1.json")
+    user_message = "hello"
+    thread, run, simulationFile = initialize(user_message, simulationFile)
+    return thread, run, simulationFile, user_message

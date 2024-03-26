@@ -1,6 +1,6 @@
 from main import *
 
-simulationFile = loadFile("PediatricSavior/backend/AssistantAPICall/case_1.json")
+simulationFile = loadFile("backend/AssistantAPICall/case_1.json")
 user_message = input("User: ")
 thread, run, simulationFile = initialize(user_message, simulationFile)
 while user_message != "STOP":
