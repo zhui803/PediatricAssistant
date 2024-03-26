@@ -34,6 +34,20 @@ export default function ChatbotUi(){
       }
       const userMessage = { id: Date.now(), text: userInput, sender: 'user', type: 'text' };
       setMessages(prevMessages => [...prevMessages, userMessage]);
+      // Send user input to backend
+      fetch('http://localhost:5000/submit-user-input', {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ text: userInput })
+      })
+      .then(response => response.json())
+      .then(data => {
+          // Handle response from backend, e.g., displaying bot response
+          console.log(data);
+      })
+      .catch(error => console.error('There was an error!', error));
       setUserInput('');
   
       fetch('http://localhost:5000/get-message')

@@ -24,7 +24,7 @@ const App = () => {
     <div className="App">
       <header className="App-header">
         <h2>Pediatric Airway Management Assistant</h2>
-        <div style={{ marginLeft: 'auto' }}>
+        <div style={{ marginLeft: 'auto' }} align="right">
           <LoginButton />
         </div>
       </header>

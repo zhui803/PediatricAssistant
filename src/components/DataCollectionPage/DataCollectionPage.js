@@ -73,6 +73,7 @@ const App = () => {
         console.error('Error:', error);
     });
     setIsSubmitting(false);
+    alert("Submission Completed")
 };
 
   return (
