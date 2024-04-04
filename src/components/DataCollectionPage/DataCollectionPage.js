@@ -58,7 +58,7 @@ const App = () => {
     };
 
     // Send combinedData to the server
-    fetch('http://localhost:5000/submit-data', {
+    fetch('http://localhost:4999/submit-data', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

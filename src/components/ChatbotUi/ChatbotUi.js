@@ -38,7 +38,7 @@ export default function ChatbotUi(){
       setMessages(prevMessages => [...prevMessages, userMessage]);
   
       // Send user input to backend and wait for the response
-      fetch('http://localhost:5000/submit-user-input', {
+      fetch('http://localhost:4999/submit-user-input', {
           method: 'POST',
           headers: {
               'Content-Type': 'application/json',
@@ -57,7 +57,7 @@ export default function ChatbotUi(){
   };
   
   const fetchMessage = () => {
-      fetch('http://localhost:5000/get-message')
+      fetch('http://localhost:4999/get-message')
           .then(response => response.json())
           .then(data => {
               const botMessage = { id: Date.now(), text: data.message, sender: 'bot', type: 'text' };
@@ -67,7 +67,7 @@ export default function ChatbotUi(){
   };
   
   const initializeChat = () => {
-    fetch('http://localhost:5000/init-conversation', {
+    fetch('http://localhost:4999/init-conversation', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
